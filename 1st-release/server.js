@@ -13,7 +13,7 @@ const game = createGame();
 game.start();
 
 game.subscribe((command) => {
-  //console.log(`> Emiting ${command.type}`)
+  //console.log(`> Emiting ${command.type}`);
   sockets.emit(command.type, command); //vai ficar atualizando
 });
 
@@ -39,5 +39,5 @@ sockets.on("connection", (socket) => {
 });
 
 server.listen(3000, () => {
-  console.log("> Server listening on port: 3000");
+  console.log(["> Server listening on port: 3000", "> http://localhost:3000/"]);
 });
